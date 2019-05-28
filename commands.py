@@ -56,7 +56,7 @@ def list_commands():
         print(line)
     return
 
-def list_files():
+def list_supported():
     global SUPPORTED_FILES
     for file in SUPPORTED_FILES:
         line = file+' : '+SUPPORTED_FILES[file][1]
@@ -66,7 +66,7 @@ def list_files():
 WELCOME="Welcome to the Mader word counter:\na free, work in progress word counter\nfor files on your computer"
 SUPPORTED_FILES={'.txt':(txt_count,'plain text')}
 COMMANDS={'close':(close,0,0,'close this program'),
-          'sup':(list_files,0,0,'view list of supported file types'),
+          'sup':(list_supported,0,0,'view list of supported file types'),
           'coms':(list_commands,0,0,'view this list of commands'),
           'nav':(navigate,0,1,'navigate to files that are to be word counted\n      use \'..\' to represent the above location\n      use \'/\' to separate folder names\n      encase spaces in \'\"\"\'(double quotation marks) to use spaces in file names'),
           'list':(list_files,0,0,'list files in current folder')}
